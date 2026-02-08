@@ -4,7 +4,9 @@ services:
     env: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: python bot.py
+    startCommand: gunicorn bot:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.0
+      - key: TELEGRAM_TOKEN
+        value: 8192143697:AAEd1nT-lrrsVmNn28lGLkNJK2b1mI-LoDs
